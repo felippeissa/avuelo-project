@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+// @flow
+import React, { Component } from 'react';
+import Routes from './routes/Routes';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// setup fake backend
+import { configureFakeBackend } from './helpers';
+
+// Themes
+import './assets/scss/Saas.scss';
+
+// For Dark import Saas-Dark.scss
+// import './assets/scss/Saas-Dark.scss';
+
+// For Modern import Modern.scss
+// import './assets/scss/Modern.scss';
+// For modern dakr import Modern-Dark.scss
+// import './assets/scss/Modern-Dark.scss';
+
+// For Creative demo import Modern.scss
+// import './assets/scss/Creative.scss';
+// For Creative dark demo import Modern.scss
+// import './assets/scss/Creative-Dark.scss';
+
+// configure fake backend
+configureFakeBackend();
+
+type AppProps = {};
+
+/**
+ * Main app component
+ */
+class App extends Component<AppProps> {
+    render() {
+        return <Routes></Routes>;
+    }
 }
 
 export default App;
